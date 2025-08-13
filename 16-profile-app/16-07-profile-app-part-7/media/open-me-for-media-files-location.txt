@@ -1,3 +1,0 @@
-To avoid uploading duplicate media images into every folder of this source code repo, they are not included here. You can find all images required for this folder here: 
-
-https://github.com/Code-Institute-Solutions/boutique_ado_v1_sourcecode/tree/main/05-products-setup/05-01-adding-the-products/media
