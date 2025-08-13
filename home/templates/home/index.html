@@ -11,18 +11,250 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    Your Instrument, Your Journey
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Explore Instruments</a>
-                    </h4>
+    <!-- Hero Section with Video Background -->
+    <section class="hero-section">
+        <div class="hero-video-container">
+            <video autoplay muted loop class="hero-video">
+                <source src="https://player.vimeo.com/external/3345545.sd.mp4?s=1234567890&profile_id=164&oauth2_token_id=1234567890" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 mx-auto text-center">
+                            <h1 class="hero-title">
+                                Your Instrument, Your Journey
+                            </h1>
+                            <p class="hero-subtitle">
+                                Discover the perfect instrument for your musical adventure
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="{% url 'products' %}" class="btn btn-primary btn-lg me-3">
+                                    Explore Instruments
+                                </a>
+                                <a href="#subscription-plans" class="btn btn-outline-light btn-lg">
+                                    View Plans
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Instrument Categories Section -->
+    <section class="categories-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Choose Your Instrument Family</h2>
+                    <p class="section-subtitle">Find the perfect sound for your musical journey</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Strings Category -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card" data-category="strings">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/165971/pexels-photo-165971.jpeg" alt="Electric Guitar" class="img-fluid">
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Strings</h3>
+                            <p class="category-description">Electric, acoustic, bass, and classical guitars</p>
+                            <a href="{% url 'products' %}?category=strings" class="btn btn-outline-primary">Explore Strings</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Percussion Category -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card" data-category="percussion">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/4089501/pexels-photo-4089501.jpeg" alt="Drums" class="img-fluid">
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Percussion</h3>
+                            <p class="category-description">Drums, cajón, and percussion instruments</p>
+                            <a href="{% url 'products' %}?category=percussion" class="btn btn-outline-primary">Explore Percussion</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keys Category -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card" data-category="keys">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/5650523/pexels-photo-5650523.jpeg" alt="Piano" class="img-fluid">
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Keys</h3>
+                            <p class="category-description">Pianos, keyboards, and synthesizers</p>
+                            <a href="{% url 'products' %}?category=keys" class="btn btn-outline-primary">Explore Keys</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wind Category -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card" data-category="wind">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/2479312/pexels-photo-2479312.jpeg" alt="Saxophone" class="img-fluid">
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Wind</h3>
+                            <p class="category-description">Saxophones, trumpets, and wind instruments</p>
+                            <a href="{% url 'products' %}?category=wind" class="btn btn-outline-primary">Explore Wind</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellness Category -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card" data-category="wellness">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/6444708/pexels-photo-6444708.jpeg" alt="Frequency Bowl" class="img-fluid">
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Wellness</h3>
+                            <p class="category-description">Frequency bowls and meditation instruments</p>
+                            <a href="{% url 'products' %}?category=wellness" class="btn btn-outline-primary">Explore Wellness</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessories Category -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card" data-category="accessories">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/1545333/pexels-photo-1545333.jpeg" alt="Guitar Accessories" class="img-fluid">
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Accessories</h3>
+                            <p class="category-description">Picks, straps, cables, and cases</p>
+                            <a href="{% url 'products' %}?category=accessories" class="btn btn-outline-primary">Explore Accessories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Plans Section -->
+    <section id="subscription-plans" class="subscription-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Flexible Rental Plans</h2>
+                    <p class="section-subtitle">Choose the plan that fits your musical journey</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>3 Months</h3>
+                            <p class="plan-subtitle">Perfect for beginners</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="currency">€</span>
+                            <span class="amount">49</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Flexible monthly cancellation</li>
+                            <li>3 months free lessons included</li>
+                            <li>Basic insurance coverage</li>
+                        </ul>
+                        <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="plan-header">
+                            <h3>6 Months</h3>
+                            <p class="plan-subtitle">Best value for money</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="currency">€</span>
+                            <span class="amount">39</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>20% discount on total</li>
+                            <li>6 months free lessons included</li>
+                            <li>Premium insurance coverage</li>
+                            <li>Free case included</li>
+                        </ul>
+                        <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>12 Months</h3>
+                            <p class="plan-subtitle">For serious musicians</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="currency">€</span>
+                            <span class="amount">35</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>30% discount on total</li>
+                            <li>12 months free lessons included</li>
+                            <li>Premium insurance coverage</li>
+                            <li>Free case and accessories</li>
+                            <li>Purchase option at end</li>
+                        </ul>
+                        <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>24 Months</h3>
+                            <p class="plan-subtitle">Long-term commitment</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="currency">€</span>
+                            <span class="amount">29</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>40% discount on total</li>
+                            <li>24 months free lessons included</li>
+                            <li>Premium insurance coverage</li>
+                            <li>Free case and accessories</li>
+                            <li>Purchase option at end</li>
+                            <li>Priority customer support</li>
+                        </ul>
+                        <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="cta-title">Ready to Start Your Musical Journey?</h2>
+                    <p class="cta-subtitle">Join thousands of musicians who trust Instrumento for their instrument needs</p>
+                    <div class="cta-buttons">
+                        <a href="{% url 'products' %}" class="btn btn-primary btn-lg me-3">Browse Instruments</a>
+                        <a href="#" class="btn btn-outline-primary btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
