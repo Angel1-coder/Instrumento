@@ -13,102 +13,194 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
+            <!-- Product Image -->
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container my-5">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
-                        {% else %}
+                    {% else %}
                         <a href="">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
                     {% endif %}
                 </div>
             </div>
+            
+            <!-- Product Details & Rental Options -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                    <!-- Product Info -->
+                    <h2 class="mb-3">{{ product.name }}</h2>
+                    {% if product.brand %}
+                        <p class="text-muted mb-2"><strong>Brand:</strong> {{ product.brand }}</p>
+                    {% endif %}
+                    {% if product.model %}
+                        <p class="text-muted mb-2"><strong>Model:</strong> {{ product.model }}</p>
+                    {% endif %}
+                    
                     {% if product.category %}
-                    <p class="small mt-1 mb-0">
-                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                        </a>
-                    </p>
+                        <p class="small mt-1 mb-3">
+                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            </a>
+                        </p>
                     {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
-                    {% endif %}
-                    {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                        </small>
-                    {% endif %}
-                    <p class="mt-3">{{ product.description }}</p>
-                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-row">
-                            {% with product.has_sizes as s %}
-                            {% if s %}
-                                <div class="col-12">
-                                    <p><strong>Size:</strong></p>
-                                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="xs">XS</option>
-                                        <option value="s">S</option>
-                                        <option value="m" selected>M</option>
-                                        <option value="l">L</option>
-                                        <option value="xl">XL</option>
-                                    </select>
-                                </div>
-                            {% endif %}
-                            <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
-                                    <!-- Add class with product id -->
-                                    <div class="input-group input-group-{{ product.id }}">
-                                        <div class="input-group-prepend">
-                                            <!-- Remove button id, replace with class -->
-                                            <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
-                                                data-item_id="{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <!-- Remove input id, replace with class -->
-                                        <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                            name="quantity" value="1" min="1" max="99"
-                                            data-item_id="{{ product.id }}">
-                                        <div class="input-group-append">
-                                            <!-- Remove button id, replace with class -->
-                                            <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                                                data-item_id="{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
+                    
+                    <p class="mb-4">{{ product.description }}</p>
+                    
+                    <!-- Purchase Price -->
+                    <div class="purchase-price-section mb-4">
+                        <h4 class="text-success mb-2">Purchase Price</h4>
+                        <p class="lead mb-0 font-weight-bold text-success">${{ product.purchase_price }}</p>
+                        <small class="text-muted">Own it forever</small>
+                    </div>
+                    
+                    <!-- Rental Options -->
+                    <div class="rental-options-section mb-4">
+                        <h4 class="mb-3">Rental Options</h4>
+                        
+                        <!-- Student Discount Banner -->
+                        <div class="student-discount-banner mb-3 p-3 bg-warning text-dark rounded">
+                            <i class="fas fa-graduation-cap mr-2"></i>
+                            <strong>Student Discount: {{ product.student_discount_percentage }}% off!</strong>
                         </div>
-                    </form>
+                        
+                        <!-- Rental Duration Selection -->
+                        <div class="rental-durations mb-3">
+                            <label class="form-label"><strong>Choose Rental Duration:</strong></label>
+                            <div class="btn-group-vertical w-100" role="group">
+                                <input type="radio" class="btn-check" name="rental_duration" id="duration_3" value="3" data-price="{{ product.rental_price_3months }}">
+                                <label class="btn btn-outline-primary mb-2" for="duration_3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><strong>3 Months</strong></span>
+                                        <span class="badge bg-primary">${{ product.rental_price_3months }}/month</span>
+                                    </div>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="rental_duration" id="duration_6" value="6" data-price="{{ product.rental_price_6months }}" checked>
+                                <label class="btn btn-outline-primary mb-2" for="duration_6">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><strong>6 Months</strong> <span class="badge bg-success">Most Popular</span></span>
+                                        <span class="badge bg-primary">${{ product.rental_price_6months }}/month</span>
+                                    </div>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="rental_duration" id="duration_12" value="12" data-price="{{ product.rental_price_12months }}">
+                                <label class="btn btn-outline-primary mb-2" for="duration_12">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><strong>12 Months</strong></span>
+                                        <span class="badge bg-primary">${{ product.rental_price_12months }}/month</span>
+                                    </div>
+                                </label>
+                                
+                                <input type="radio" class="rental_duration" id="duration_24" value="24" data-price="{{ product.rental_price_24months }}">
+                                <label class="btn btn-outline-primary mb-2" for="duration_24">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span><strong>24 Months</strong></span>
+                                        <span class="badge bg-primary">${{ product.rental_price_24months }}/month</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Insurance Options -->
+                        <div class="insurance-options mb-3">
+                            <label class="form-label"><strong>Insurance Coverage:</strong></label>
+                            <div class="btn-group-vertical w-100" role="group">
+                                <input type="radio" class="btn-check" name="insurance" id="insurance_none" value="none" checked>
+                                <label class="btn btn-outline-secondary mb-2" for="insurance_none">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>No Insurance</span>
+                                        <span class="badge bg-secondary">$0/month</span>
+                                    </div>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="insurance" id="insurance_basic" value="basic" data-price="{{ product.basic_insurance_monthly }}">
+                                <label class="btn btn-outline-info mb-2" for="insurance_basic">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Basic Insurance</span>
+                                        <span class="badge bg-info">${{ product.basic_insurance_monthly }}/month</span>
+                                    </div>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="insurance" id="insurance_premium" value="premium" data-price="{{ product.premium_insurance_monthly }}">
+                                <label class="btn btn-outline-warning mb-2" for="insurance_premium">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Premium Insurance</span>
+                                        <span class="badge bg-warning">${{ product.premium_insurance_monthly }}/month</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Student Discount Checkbox -->
+                        <div class="student-discount mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="student_discount" name="student_discount">
+                                <label class="form-check-label" for="student_discount">
+                                    <i class="fas fa-graduation-cap mr-2"></i>
+                                    I'm a student ({{ product.student_discount_percentage }}% discount)
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Summary -->
+                        <div class="price-summary mb-4 p-3 bg-light rounded">
+                            <h5 class="mb-3">Price Summary</h5>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="mb-1">Monthly Rental:</p>
+                                    <p class="mb-1">Insurance:</p>
+                                    <p class="mb-1">Student Discount:</p>
+                                    <hr>
+                                    <p class="mb-0"><strong>Total Monthly:</strong></p>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <p class="mb-1" id="monthly-rental-price">${{ product.rental_price_6months }}</p>
+                                    <p class="mb-1" id="insurance-price">$0.00</p>
+                                    <p class="mb-1" id="discount-amount">$0.00</p>
+                                    <hr>
+                                    <p class="mb-0"><strong id="total-monthly-price">${{ product.rental_price_6months }}</strong></p>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <p class="mb-1"><strong>Total Contract Value:</strong></p>
+                                <p class="h4 text-primary" id="total-contract-price">${{ product.get_total_rental_cost }}</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0 mb-2 w-100">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            
+                            <button type="button" class="btn btn-primary rounded-0 text-uppercase w-100 mb-2" id="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Add to Cart
+                            </button>
+                            
+                            <button type="button" class="btn btn-success rounded-0 text-uppercase w-100" id="rent-now-btn">
+                                <i class="fas fa-play mr-2"></i>
+                                Rent Now
+                            </button>
+                        </div>
+                        
+                        <!-- Admin Actions -->
+                        {% if request.user.is_superuser %}
+                            <div class="admin-actions mt-4 pt-3 border-top">
+                                <small class="text-muted">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,5 +209,62 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const durationInputs = document.querySelectorAll('input[name="rental_duration"]');
+    const insuranceInputs = document.querySelectorAll('input[name="insurance"]');
+    const studentDiscountCheckbox = document.getElementById('student_discount');
+    
+    function updatePrices() {
+        const selectedDuration = document.querySelector('input[name="rental_duration"]:checked');
+        const selectedInsurance = document.querySelector('input[name="insurance"]:checked');
+        const isStudent = studentDiscountCheckbox.checked;
+        
+        if (!selectedDuration) return;
+        
+        const monthlyRentalPrice = parseFloat(selectedDuration.dataset.price);
+        const insurancePrice = selectedInsurance.value === 'none' ? 0 : parseFloat(selectedInsurance.dataset.price);
+        const studentDiscountPercent = {{ product.student_discount_percentage }} / 100;
+        
+        let totalMonthly = monthlyRentalPrice + insurancePrice;
+        let discountAmount = 0;
+        
+        if (isStudent) {
+            discountAmount = totalMonthly * studentDiscountPercent;
+            totalMonthly -= discountAmount;
+        }
+        
+        // Update display
+        document.getElementById('monthly-rental-price').textContent = `$${monthlyRentalPrice.toFixed(2)}`;
+        document.getElementById('insurance-price').textContent = `$${insurancePrice.toFixed(2)}`;
+        document.getElementById('discount-amount').textContent = `$${discountAmount.toFixed(2)}`;
+        document.getElementById('total-monthly-price').textContent = `$${totalMonthly.toFixed(2)}`;
+        
+        // Calculate total contract value
+        const duration = parseInt(selectedDuration.value);
+        const totalContractValue = totalMonthly * duration;
+        document.getElementById('total-contract-price').textContent = `$${totalContractValue.toFixed(2)}`;
+    }
+    
+    // Event listeners
+    durationInputs.forEach(input => input.addEventListener('change', updatePrices));
+    insuranceInputs.forEach(input => input.addEventListener('change', updatePrices));
+    studentDiscountCheckbox.addEventListener('change', updatePrices);
+    
+    // Initialize prices
+    updatePrices();
+    
+    // Add to cart functionality
+    document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+        // TODO: Implement add to cart logic
+        alert('Add to cart functionality coming soon!');
+    });
+    
+    // Rent now functionality
+    document.getElementById('rent-now-btn').addEventListener('click', function() {
+        // TODO: Implement direct rental checkout
+        alert('Direct rental checkout coming soon!');
+    });
+});
+</script>
 {% endblock %}

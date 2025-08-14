@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, InstrumentType, Product, Accessory, SubscriptionPlan, InsuranceOption
+from .models import Category, InstrumentType, Product, Accessory, SubscriptionPlan, InsuranceOption, RentalOrder
 
 
 class InstrumentTypeInline(admin.TabularInline):
@@ -34,33 +34,49 @@ class InstrumentTypeAdmin(admin.ModelAdmin):
     ordering = ('category', 'display_order')
 
 
+@admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'instrument_type', 'brand', 'model', 
-                   'rental_price_monthly', 'purchase_price', 'stock_quantity', 'is_active')
-    list_editable = ('is_active', 'stock_quantity')
-    list_filter = ('category', 'instrument_type', 'is_rental_available', 
-                  'is_purchase_available', 'condition', 'is_active')
-    search_fields = ('name', 'brand', 'model', 'description')
-    ordering = ('category', 'instrument_type', 'name')
+    list_display = [
+        'name', 'category', 'instrument_type', 'brand', 'model',
+        'rental_price_6months', 'purchase_price', 'stock_quantity', 'is_active'
+    ]
+    list_editable = ['is_active', 'stock_quantity']
+    list_filter = ['category', 'instrument_type', 'is_rental_available', 'is_purchase_available', 'is_active']
+    search_fields = ['name', 'brand', 'model', 'description']
+    ordering = ['name']
     
     fieldsets = (
         ('Basic Information', {
-            'fields': ('name', 'category', 'instrument_type', 'description', 'long_description')
+            'fields': ('name', 'description', 'long_description', 'category', 'instrument_type')
         }),
         ('Product Details', {
-            'fields': ('brand', 'model', 'condition', 'year_made', 'sku')
+            'fields': ('brand', 'model', 'condition', 'year_made', 'stock_quantity')
         }),
-        ('Pricing & Options', {
-            'fields': ('rental_price_monthly', 'purchase_price', 'is_rental_available', 
-                      'is_purchase_available', 'has_sizes')
+        ('Rental Pricing', {
+            'fields': (
+                'rental_price_3months', 'rental_price_6months', 
+                'rental_price_12months', 'rental_price_24months',
+                'is_rental_available'
+            )
         }),
-        ('Media', {
+        ('Purchase & Insurance', {
+            'fields': (
+                'purchase_price', 'is_purchase_available',
+                'basic_insurance_monthly', 'premium_insurance_monthly'
+            )
+        }),
+        ('Student Benefits', {
+            'fields': ('student_discount_percentage',)
+        }),
+        ('Media & Content', {
             'fields': ('image', 'image_url', 'sound_sample_url', 'video_url')
         }),
-        ('Availability', {
-            'fields': ('stock_quantity', 'is_active')
-        }),
+        ('Status', {
+            'fields': ('is_active', 'created_at', 'updated_at')
+        })
     )
+    
+    readonly_fields = ('created_at', 'updated_at')
 
 
 @admin.register(Accessory)
@@ -103,5 +119,44 @@ class InsuranceOptionAdmin(admin.ModelAdmin):
     ordering = ('name',)
 
 
-# Register the Product model with the custom admin
-admin.site.register(Product, ProductAdmin)
+@admin.register(RentalOrder)
+class RentalOrderAdmin(admin.ModelAdmin):
+    list_display = [
+        'order_number', 'user', 'product', 'rental_duration', 
+        'monthly_price', 'total_price', 'status', 'created_at'
+    ]
+    list_filter = ['status', 'rental_duration', 'insurance_type', 'created_at']
+    search_fields = ['order_number', 'user__username', 'product__name']
+    ordering = ['-created_at']
+    
+    fieldsets = (
+        ('Order Information', {
+            'fields': ('order_number', 'user', 'product', 'status')
+        }),
+        ('Rental Details', {
+            'fields': ('rental_duration', 'start_date', 'end_date')
+        }),
+        ('Pricing', {
+            'fields': (
+                'monthly_price', 'total_price', 'student_discount_applied', 
+                'discount_amount'
+            )
+        }),
+        ('Insurance & Services', {
+            'fields': ('insurance_type', 'insurance_cost', 'includes_lessons', 'lesson_cost')
+        }),
+        ('Dates', {
+            'fields': ('created_at', 'updated_at')
+        }),
+        ('Notes', {
+            'fields': ('notes',)
+        })
+    )
+    
+    readonly_fields = ('order_number', 'created_at', 'updated_at')
+    
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related('user', 'product')
+
+
+
