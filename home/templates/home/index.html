@@ -15,7 +15,7 @@
     <section class="hero-section">
         <div class="hero-video-container">
             <video autoplay muted loop class="hero-video">
-                <source src="https://player.vimeo.com/external/3345545.sd.mp4?s=1234567890&profile_id=164&oauth2_token_id=1234567890" type="video/mp4">
+                <source src="https://images.pexels.com/videos/4088851/music-musician-lifestyle-sound.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="hero-overlay">
@@ -24,7 +24,7 @@
                         <div class="col-lg-8 col-md-10 mx-auto text-center">
                             <h1 class="hero-title">
                                 Your Instrument, Your Journey
-                            </h1>
+                </h1>
                             <p class="hero-subtitle">
                                 Discover the perfect instrument for your musical adventure
                             </p>
@@ -44,96 +44,958 @@
     </section>
 
     <!-- Instrument Categories Section -->
-    <section class="categories-section py-5">
-        <div class="container">
+    <section id="instrument-categories" class="categories-section py-5">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">Choose Your Instrument Family</h2>
-                    <p class="section-subtitle">Find the perfect sound for your musical journey</p>
+                    <h2 class="section-title">Explore Our Instrument Collection</h2>
+                    <p class="section-subtitle">Professional instruments for every skill level and budget</p>
                 </div>
             </div>
             
-            <div class="row g-4">
-                <!-- Strings Category -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="category-card" data-category="strings">
-                        <div class="category-image">
-                            <img src="https://images.pexels.com/photos/165971/pexels-photo-165971.jpeg" alt="Electric Guitar" class="img-fluid">
+            <!-- STRINGS SECTION -->
+            <div class="instrument-family-section mb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Multi-Navigation -->
+                        <div class="multi-nav">
+                            <div class="nav-tabs">
+                                <button class="nav-tab active" data-family="strings" data-subfamily="electric-guitar">
+                                    Electric Guitar
+                                </button>
+                                <button class="nav-tab" data-family="strings" data-subfamily="acoustic-guitar">
+                                    Acoustic Guitar
+                                </button>
+                                <button class="nav-tab" data-family="strings" data-subfamily="bass">
+                                    Electric Bass
+                                </button>
+                            </div>
                         </div>
-                        <div class="category-content">
-                            <h3 class="category-title">Strings</h3>
-                            <p class="category-description">Electric, acoustic, bass, and classical guitars</p>
-                            <a href="{% url 'products' %}?category=strings" class="btn btn-outline-primary">Explore Strings</a>
+                        
+                        <!-- Product Display -->
+                        <div class="product-display">
+                            <!-- Electric Guitar -->
+                            <div class="product-subfamily active" data-family="strings" data-subfamily="electric-guitar">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/28387454/pexels-photo-28387454.jpeg" alt="Squier Stratocaster">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Squier Stratocaster</h5>
+                                            <p class="product-description">Classic electric guitar sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€49/month</span>
+                                                <span class="purchase-price">€299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/5589744/pexels-photo-5589744.jpeg" alt="Squier Telecaster">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Squier Telecaster</h5>
+                                            <p class="product-description">Twangy country tone</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€49/month</span>
+                                                <span class="purchase-price">€299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/7020756/pexels-photo-7020756.jpeg" alt="Epiphone Les Paul Standard">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Epiphone Les Paul Standard</h5>
+                                            <p class="product-description">Rich, warm tone</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€399</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/31233323/pexels-photo-31233323.jpeg" alt="Ibanez RG Series">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Ibanez RG Series</h5>
+                                            <p class="product-description">Fast playing neck</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€499</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Acoustic Guitar -->
+                            <div class="product-subfamily" data-family="strings" data-subfamily="acoustic-guitar">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/3660866/pexels-photo-3660866.jpeg" alt="Yamaha FG800">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Yamaha FG800</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€39/month</span>
+                                                <span class="purchase-price">€199</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/3660866/pexels-photo-3660866.jpeg" alt="Fender CD-60S">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Fender CD-60S</h5>
+                                            <p class="product-description">Classic dreadnought</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€49/month</span>
+                                                <span class="purchase-price">€299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/3660866/pexels-photo-3660866.jpeg" alt="Takamine GD11M">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Takamine GD11M</h5>
+                                            <p class="product-description">Electro-acoustic</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€399</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/3660866/pexels-photo-3660866.jpeg" alt="Epiphone DR-100">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Epiphone DR-100</h5>
+                                            <p class="product-description">Traditional sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€44/month</span>
+                                                <span class="purchase-price">€249</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bass -->
+                            <div class="product-subfamily" data-family="strings" data-subfamily="bass">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/12063423/pexels-photo-12063423.jpeg" alt="Squier Precision Bass (P-Bass)">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Squier P-Bass</h5>
+                                            <p class="product-description">Classic bass tone</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€49/month</span>
+                                                <span class="purchase-price">€299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/12063423/pexels-photo-12063423.jpeg" alt="Squier Jazz Bass (J-Bass)">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Squier Jazz Bass</h5>
+                                            <p class="product-description">Smooth jazz tone</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€49/month</span>
+                                                <span class="purchase-price">€299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/8044221/pexels-photo-8044221.jpeg" alt="Yamaha TRBX174">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Yamaha TRBX174</h5>
+                                            <p class="product-description">Versatile bass</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€54/month</span>
+                                                <span class="purchase-price">€349</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/2649113/pexels-photo-2649113.jpeg" alt="Ibanez GSR200">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Ibanez GSR200</h5>
+                                            <p class="product-description">Modern bass design</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€399</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Percussion Category -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="category-card" data-category="percussion">
-                        <div class="category-image">
-                            <img src="https://images.pexels.com/photos/4089501/pexels-photo-4089501.jpeg" alt="Drums" class="img-fluid">
+            <!-- PERCUSSION SECTION -->
+            <div class="instrument-family-section mb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Multi-Navigation -->
+                        <div class="multi-nav">
+                            <div class="nav-tabs">
+                                <button class="nav-tab active" data-family="percussion" data-subfamily="drum-kits">
+                                    Drum Kits
+                                </button>
+                                <button class="nav-tab" data-family="percussion" data-subfamily="cajon">
+                                    Cajón
+                                </button>
+                                <button class="nav-tab" data-family="percussion" data-subfamily="handpan">
+                                    Handpan
+                                </button>
+                                <button class="nav-tab" data-family="percussion" data-subfamily="congas">
+                                    Congas/Bongos
+                                </button>
+                            </div>
                         </div>
-                        <div class="category-content">
-                            <h3 class="category-title">Percussion</h3>
-                            <p class="category-description">Drums, cajón, and percussion instruments</p>
-                            <a href="{% url 'products' %}?category=percussion" class="btn btn-outline-primary">Explore Percussion</a>
+                        
+                        <!-- Product Display -->
+                        <div class="product-display">
+                            <!-- Drum Kits -->
+                            <div class="product-subfamily active" data-family="percussion" data-subfamily="drum-kits">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6332012/pexels-photo-6332012.jpeg" alt="Rock Drum Kit">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Rock Drum Kit</h5>
+                                            <p class="product-description">Powerful rock sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€89/month</span>
+                                                <span class="purchase-price">€899</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6332012/pexels-photo-6332012.jpeg" alt="Jazz Drum Kit">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Jazz Drum Kit</h5>
+                                            <p class="product-description">Smooth jazz performance</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€79/month</span>
+                                                <span class="purchase-price">€799</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6332012/pexels-photo-6332012.jpeg" alt="Studio Drum Kit">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Studio Drum Kit</h5>
+                                            <p class="product-description">Recording quality</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€99/month</span>
+                                                <span class="purchase-price">€999</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6332012/pexels-photo-6332012.jpeg" alt="Student Drum Kit">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student Drum Kit</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€699</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cajón -->
+                            <div class="product-subfamily" data-family="percussion" data-subfamily="cajon">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/26835479/pexels-photo-26835479.jpeg" alt="Professional Cajón">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Professional Cajón</h5>
+                                            <p class="product-description">Studio quality cajón</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€39/month</span>
+                                                <span class="purchase-price">€399</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/26835479/pexels-photo-26835479.jpeg" alt="Flamenco Cajón">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Flamenco Cajón</h5>
+                                            <p class="product-description">Authentic Spanish sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€44/month</span>
+                                                <span class="purchase-price">€449</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/26835479/pexels-photo-26835479.jpeg" alt="Student Cajón">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student Cajón</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€29/month</span>
+                                                <span class="purchase-price">€299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/26835479/pexels-photo-26835479.jpeg" alt="Fusion Cajón">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Fusion Cajón</h5>
+                                            <p class="product-description">Versatile fusion style</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€49/month</span>
+                                                <span class="purchase-price">€499</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Handpan -->
+                            <div class="product-subfamily" data-family="percussion" data-subfamily="handpan">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/8866166/pexels-photo-8866166.jpeg" alt="Handpan Drum">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Handpan Drum</h5>
+                                            <p class="product-description">Meditation instrument</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€699</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/8866166/pexels-photo-8866166.jpeg" alt="Professional Handpan">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Professional Handpan</h5>
+                                            <p class="product-description">High-quality handpan</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€89/month</span>
+                                                <span class="purchase-price">€899</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/8866166/pexels-photo-8866166.jpeg" alt="Student Handpan">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student Handpan</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€599</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/8866166/pexels-photo-8866166.jpeg" alt="Meditation Handpan">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Meditation Handpan</h5>
+                                            <p class="product-description">Zen meditation sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€79/month</span>
+                                                <span class="purchase-price">€799</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Congas/Bongos -->
+                            <div class="product-subfamily" data-family="percussion" data-subfamily="congas">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6449867/pexels-photo-6449867.jpeg" alt="Professional Congas">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Professional Congas</h5>
+                                            <p class="product-description">Studio quality congas</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€599</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6449867/pexels-photo-6449867.jpeg" alt="Latin Bongos">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Latin Bongos</h5>
+                                            <p class="product-description">Authentic Latin sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€49/month</span>
+                                                <span class="purchase-price">€499</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6449867/pexels-photo-6449867.jpeg" alt="Student Congas">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student Congas</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€39/month</span>
+                                                <span class="purchase-price">€399</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6449867/pexels-photo-6449867.jpeg" alt="Fusion Congas">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Fusion Congas</h5>
+                                            <p class="product-description">Versatile fusion style</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€699</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Keys Category -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="category-card" data-category="keys">
-                        <div class="category-image">
-                            <img src="https://images.pexels.com/photos/5650523/pexels-photo-5650523.jpeg" alt="Piano" class="img-fluid">
+            <!-- WIND SECTION -->
+            <div class="instrument-family-section mb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Multi-Navigation -->
+                        <div class="multi-nav">
+                            <div class="nav-tabs">
+                                <button class="nav-tab active" data-family="wind" data-subfamily="trumpet">
+                                    Trumpet
+                                </button>
+                                <button class="nav-tab" data-family="wind" data-subfamily="saxophone">
+                                    Saxophone
+                                </button>
+                                <button class="nav-tab" data-family="wind" data-subfamily="flute">
+                                    Flute
+                                </button>
+                            </div>
                         </div>
-                        <div class="category-content">
-                            <h3 class="category-title">Keys</h3>
-                            <p class="category-description">Pianos, keyboards, and synthesizers</p>
-                            <a href="{% url 'products' %}?category=keys" class="btn btn-outline-primary">Explore Keys</a>
+                        
+                        <!-- Product Display -->
+                        <div class="product-display">
+                            <!-- Trumpet -->
+                            <div class="product-subfamily active" data-family="wind" data-subfamily="trumpet">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/3357078/pexels-photo-3357078.jpeg" alt="Student Trumpet">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student Trumpet</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€599</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/3357078/pexels-photo-3357078.jpeg" alt="Jazz Trumpet">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Jazz Trumpet</h5>
+                                            <p class="product-description">Smooth jazz sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€699</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg" alt="Classical Trumpet">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Classical Trumpet</h5>
+                                            <p class="product-description">Orchestral quality</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€129/month</span>
+                                                <span class="rental-price">€1299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg" alt="Professional Trumpet">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Professional Trumpet</h5>
+                                            <p class="product-description">Concert hall quality</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€89/month</span>
+                                                <span class="purchase-price">€899</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Saxophone -->
+                            <div class="product-subfamily" data-family="wind" data-subfamily="saxophone">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg" alt="Alto Saxophone">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Alto Saxophone</h5>
+                                            <p class="product-description">Classic jazz sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€129/month</span>
+                                                <span class="purchase-price">€1299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg" alt="Tenor Saxophone">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Tenor Saxophone</h5>
+                                            <p class="product-description">Rich tenor tone</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€89/month</span>
+                                                <span class="purchase-price">€899</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg" alt="Jazz Saxophone">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Jazz Saxophone</h5>
+                                            <p class="product-description">Smooth jazz performance</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€149/month</span>
+                                                <span class="purchase-price">€1499</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg" alt="Student Saxophone">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student Saxophone</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€79/month</span>
+                                                <span class="purchase-price">€799</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flute -->
+                            <div class="product-subfamily" data-family="wind" data-subfamily="flute">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/2254140/pexels-photo-2254140.jpeg" alt="Student Flute">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student Flute</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€699</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/2254140/pexels-photo-2254140.jpeg" alt="Classical Flute">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Classical Flute</h5>
+                                            <p class="product-description">Orchestral quality</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€79/month</span>
+                                                <span class="purchase-price">€799</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/2254140/pexels-photo-2254140.jpeg" alt="Professional Flute">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Professional Flute</h5>
+                                            <p class="product-description">Concert hall quality</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€119/month</span>
+                                                <span class="purchase-price">€1199</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/2254140/pexels-photo-2254140.jpeg" alt="Irish Flute">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Irish Flute</h5>
+                                            <p class="product-description">Traditional Celtic sound</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€599</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Wind Category -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="category-card" data-category="wind">
-                        <div class="category-image">
-                            <img src="https://images.pexels.com/photos/2479312/pexels-photo-2479312.jpeg" alt="Saxophone" class="img-fluid">
+            <!-- KEYBOARDS SECTION -->
+            <div class="instrument-family-section mb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Multi-Navigation -->
+                        <div class="multi-nav">
+                            <div class="nav-tabs">
+                                <button class="nav-tab active" data-family="keyboards" data-subfamily="digital-piano">
+                                    Digital Piano
+                                </button>
+                                <button class="nav-tab" data-family="keyboards" data-subfamily="midi-keyboard">
+                                    MIDI Keyboard
+                                </button>
+                            </div>
                         </div>
-                        <div class="category-content">
-                            <h3 class="category-title">Wind</h3>
-                            <p class="category-description">Saxophones, trumpets, and wind instruments</p>
-                            <a href="{% url 'products' %}?category=wind" class="btn btn-outline-primary">Explore Wind</a>
+                        
+                        <!-- Product Display -->
+                        <div class="product-display">
+                            <!-- Digital Piano -->
+                            <div class="product-subfamily active" data-family="keyboards" data-subfamily="digital-piano">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6671690/pexels-photo-6671690.jpeg" alt="Yamaha P-45">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Yamaha P-45</h5>
+                                            <p class="product-description">Entry level digital piano</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€699</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6671690/pexels-photo-6671690.jpeg" alt="Casio CDP-S100">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Casio CDP-S100</h5>
+                                            <p class="product-description">Compact design</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€59/month</span>
+                                                <span class="purchase-price">€599</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6328792/pexels-photo-6328792.jpeg" alt="Alesis V49">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Alesis V49</h5>
+                                            <p class="product-description">MIDI keyboard</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€89/month</span>
+                                                <span class="purchase-price">€899</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6328792/pexels-photo-6328792.jpeg" alt="M-Audio Keystation 49">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>M-Audio Keystation 49</h5>
+                                            <p class="product-description">Studio MIDI keyboard</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€99/month</span>
+                                                <span class="purchase-price">€999</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MIDI Keyboard -->
+                            <div class="product-subfamily" data-family="keyboards" data-subfamily="midi-keyboard">
+                                <div class="product-grid">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6328792/pexels-photo-6328792.jpeg" alt="Alesis V49">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Alesis V49</h5>
+                                            <p class="product-description">49-key MIDI keyboard</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€89/month</span>
+                                                <span class="purchase-price">€899</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6328792/pexels-photo-6328792.jpeg" alt="M-Audio Keystation 49">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>M-Audio Keystation 49</h5>
+                                            <p class="product-description">Studio MIDI keyboard</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€99/month</span>
+                                                <span class="purchase-price">€999</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6328792/pexels-photo-6328792.jpeg" alt="Professional MIDI Keyboard">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Professional MIDI Keyboard</h5>
+                                            <p class="product-description">High-quality MIDI controller</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€129/month</span>
+                                                <span class="purchase-price">€1299</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <img src="https://images.pexels.com/photos/6328792/pexels-photo-6328792.jpeg" alt="Student MIDI Keyboard">
+                                        </div>
+                                        <div class="product-info">
+                                            <h5>Student MIDI Keyboard</h5>
+                                            <p class="product-description">Perfect for beginners</p>
+                                            <div class="product-pricing">
+                                                <span class="rental-price">€69/month</span>
+                                                <span class="purchase-price">€699</span>
+                                            </div>
+                                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Wellness Category -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="category-card" data-category="wellness">
-                        <div class="category-image">
-                            <img src="https://images.pexels.com/photos/6444708/pexels-photo-6444708.jpeg" alt="Frequency Bowl" class="img-fluid">
+
+
+    <!-- Accessories Section -->
+    <section id="accessories" class="accessories-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title">Professional Accessories</h2>
+                    <p class="section-subtitle">Complete your musical setup</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="accessory-card">
+                        <div class="accessory-image">
+                            <img src="https://images.pexels.com/photos/1545333/pexels-photo-1545333.jpeg" alt="Guitar Cases">
                         </div>
-                        <div class="category-content">
-                            <h3 class="category-title">Wellness</h3>
-                            <p class="category-description">Frequency bowls and meditation instruments</p>
-                            <a href="{% url 'products' %}?category=wellness" class="btn btn-outline-primary">Explore Wellness</a>
+                        <div class="accessory-info">
+                            <h5>Guitar Cases</h5>
+                            <p>Professional protection for your instruments</p>
+                            <div class="accessory-price">€29</div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Accessories Category -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="category-card" data-category="accessories">
-                        <div class="category-image">
-                            <img src="https://images.pexels.com/photos/1545333/pexels-photo-1545333.jpeg" alt="Guitar Accessories" class="img-fluid">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="accessory-card">
+                        <div class="accessory-image">
+                            <img src="https://images.pexels.com/photos/8132528/pexels-photo-8132528.jpeg" alt="Microphones">
                         </div>
-                        <div class="category-content">
-                            <h3 class="category-title">Accessories</h3>
-                            <p class="category-description">Picks, straps, cables, and cases</p>
-                            <a href="{% url 'products' %}?category=accessories" class="btn btn-outline-primary">Explore Accessories</a>
+                        <div class="accessory-info">
+                            <h5>Microphones</h5>
+                            <p>Studio quality recording equipment</p>
+                            <div class="accessory-price">€49</div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="accessory-card">
+                        <div class="accessory-image">
+                            <img src="https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg" alt="Headphones">
+                        </div>
+                        <div class="accessory-info">
+                            <h5>Headphones</h5>
+                            <p>Professional monitoring headphones</p>
+                            <div class="accessory-price">€39</div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="accessory-card">
+                        <div class="accessory-image">
+                            <img src="https://images.pexels.com/photos/1864641/pexels-photo-1864641.jpeg" alt="Guitar Straps">
+                        </div>
+                        <div class="accessory-info">
+                            <h5>Guitar Straps</h5>
+                            <p>Comfortable and durable straps</p>
+                            <div class="accessory-price">€19</div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +1004,7 @@
     </section>
 
     <!-- Subscription Plans Section -->
-    <section id="subscription-plans" class="subscription-section py-5 bg-light">
+    <section id="rental-plans" class="subscription-section py-5 bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -156,17 +1018,18 @@
                     <div class="plan-card">
                         <div class="plan-header">
                             <h3>3 Months</h3>
-                            <p class="plan-subtitle">Perfect for beginners</p>
+                            <p class="plan-subtitle">Try & Test</p>
                         </div>
                         <div class="plan-price">
                             <span class="currency">€</span>
-                            <span class="amount">49</span>
+                            <span class="amount">89</span>
                             <span class="period">/month</span>
                         </div>
                         <ul class="plan-features">
-                            <li>Flexible monthly cancellation</li>
-                            <li>3 months free lessons included</li>
-                            <li>Basic insurance coverage</li>
+                            <li>Perfect for testing instruments</li>
+                            <li>Monthly cancellation possible</li>
+                            <li>Basic insurance included</li>
+                            <li>No long-term commitment</li>
                         </ul>
                         <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
                     </div>
@@ -177,18 +1040,19 @@
                         <div class="popular-badge">Most Popular</div>
                         <div class="plan-header">
                             <h3>6 Months</h3>
-                            <p class="plan-subtitle">Best value for money</p>
+                            <p class="plan-subtitle">Best Value</p>
                         </div>
                         <div class="plan-price">
                             <span class="currency">€</span>
-                            <span class="amount">39</span>
+                            <span class="amount">69</span>
                             <span class="period">/month</span>
                         </div>
                         <ul class="plan-features">
-                            <li>20% discount on total</li>
-                            <li>6 months free lessons included</li>
-                            <li>Premium insurance coverage</li>
+                            <li>22% savings vs monthly</li>
+                            <li>2 months free lessons</li>
+                            <li>Premium insurance included</li>
                             <li>Free case included</li>
+                            <li>Purchase option at end</li>
                         </ul>
                         <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
                     </div>
@@ -198,19 +1062,20 @@
                     <div class="plan-card">
                         <div class="plan-header">
                             <h3>12 Months</h3>
-                            <p class="plan-subtitle">For serious musicians</p>
+                            <p class="plan-subtitle">Serious Musician</p>
                         </div>
                         <div class="plan-price">
                             <span class="currency">€</span>
-                            <span class="amount">35</span>
+                            <span class="amount">59</span>
                             <span class="period">/month</span>
                         </div>
                         <ul class="plan-features">
-                            <li>30% discount on total</li>
-                            <li>12 months free lessons included</li>
-                            <li>Premium insurance coverage</li>
-                            <li>Free case and accessories</li>
+                            <li>34% savings vs monthly</li>
+                            <li>4 months free lessons</li>
+                            <li>Premium insurance included</li>
+                            <li>Free case & accessories</li>
                             <li>Purchase option at end</li>
+                            <li>Priority support</li>
                         </ul>
                         <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
                     </div>
@@ -220,22 +1085,55 @@
                     <div class="plan-card">
                         <div class="plan-header">
                             <h3>24 Months</h3>
-                            <p class="plan-subtitle">Long-term commitment</p>
+                            <p class="plan-subtitle">Long-term</p>
                         </div>
                         <div class="plan-price">
                             <span class="currency">€</span>
-                            <span class="amount">29</span>
+                            <span class="amount">49</span>
                             <span class="period">/month</span>
                         </div>
                         <ul class="plan-features">
-                            <li>40% discount on total</li>
-                            <li>24 months free lessons included</li>
-                            <li>Premium insurance coverage</li>
-                            <li>Free case and accessories</li>
+                            <li>45% savings vs monthly</li>
+                            <li>6 months free lessons</li>
+                            <li>Premium insurance included</li>
+                            <li>Free case & accessories</li>
                             <li>Purchase option at end</li>
-                            <li>Priority customer support</li>
+                            <li>VIP customer support</li>
+                            <li>Free instrument upgrade</li>
                         </ul>
                         <a href="{% url 'products' %}" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Info -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="additional-info">
+                        <h4>Additional Services</h4>
+                        <div class="row g-3 mt-3">
+                            <div class="col-md-4">
+                                <div class="service-item">
+                                    <i class="fas fa-music"></i>
+                                    <h5>Private Lessons</h5>
+                                    <p>€29/month after free period</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h5>Premium Insurance</h5>
+                                    <p>€15/month for extra coverage</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-item">
+                                    <i class="fas fa-shipping-fast"></i>
+                                    <h5>Express Delivery</h5>
+                                    <p>€19 for next-day delivery</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,9 +1150,60 @@
                     <div class="cta-buttons">
                         <a href="{% url 'products' %}" class="btn btn-primary btn-lg me-3">Browse Instruments</a>
                         <a href="#" class="btn btn-outline-primary btn-lg">Contact Us</a>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Multi-navigation tab functionality
+    const navTabs = document.querySelectorAll('.nav-tab');
+    
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const family = this.dataset.family;
+            const subfamily = this.dataset.subfamily;
+            
+            // Remove active class from all tabs in this family section
+            const familySection = this.closest('.instrument-family-section');
+            const tabsInFamily = familySection.querySelectorAll('.nav-tab');
+            tabsInFamily.forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Show corresponding product subfamily
+            showProductSubfamily(family, subfamily);
+        });
+    });
+    
+    function showProductSubfamily(family, subfamily) {
+        const familySection = document.querySelector(`[data-family="${family}"]`).closest('.instrument-family-section');
+        const productDisplay = familySection.querySelector('.product-display');
+        
+        // Hide all subfamilies in this family
+        const subfamilies = productDisplay.querySelectorAll('.product-subfamily');
+        subfamilies.forEach(sub => sub.classList.remove('active'));
+        
+        // Show selected subfamily
+        const selectedSubfamily = productDisplay.querySelector(`[data-subfamily="${subfamily}"]`);
+        if (selectedSubfamily) {
+            selectedSubfamily.classList.add('active');
+        }
+    }
+    
+    // Initialize with first tab active in each family
+    const familySections = document.querySelectorAll('.instrument-family-section');
+    familySections.forEach(section => {
+        const firstTab = section.querySelector('.nav-tab');
+        if (firstTab) {
+            firstTab.classList.add('active');
+        }
+    });
+});
+</script>
 {% endblock %}
