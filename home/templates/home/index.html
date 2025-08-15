@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -23,17 +24,17 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-10 mx-auto text-center">
                             <h1 class="hero-title">
-                                Your Instrument, Your Journey
+                                {% trans "Your Instrument, Your Journey" %}
                 </h1>
                             <p class="hero-subtitle">
-                                Discover the perfect instrument for your musical adventure
+                                {% trans "Discover the perfect instrument for your musical adventure" %}
                             </p>
                             <div class="hero-buttons">
                                 <a href="{% url 'products' %}" class="btn btn-primary btn-lg me-3">
-                                    Explore Instruments
+                                    {% trans "Shop Now" %}
                                 </a>
                                 <a href="#subscription-plans" class="btn btn-outline-light btn-lg">
-                                    View Plans
+                                    {% trans "View Plans" %}
                                 </a>
                             </div>
                         </div>
@@ -48,8 +49,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">Explore Our Instrument Collection</h2>
-                    <p class="section-subtitle">Professional instruments for every skill level and budget</p>
+                    <h2 class="section-title">{% trans "Explore Our Instrument Collection" %}</h2>
+                    <p class="section-subtitle">{% trans "Professional instruments for every skill level and budget" %}</p>
                 </div>
             </div>
             

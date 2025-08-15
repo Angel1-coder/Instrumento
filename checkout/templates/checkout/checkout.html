@@ -28,6 +28,7 @@
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
+                <small class="text-muted">Order #{{ order_number|default:"TBD" }}</small>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -68,6 +69,7 @@
                         <p class="my-0">${{ total | floatformat:2 }}</p>
                         <p class="my-0">${{ delivery | floatformat:2 }}</p>
                         <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                        <small class="text-muted">Estimated delivery: 3-5 business days</small>
                     </div>
                 </div>
             </div>
@@ -103,11 +105,37 @@
                     </fieldset>
                     <fieldset class="px-3">
                         <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                        <!-- A Stripe card element will go here -->
-                        <div class="mb-3" id="card-element"></div>
-
-                        <!-- Used to display form errors -->
-                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                        
+                        {% if stripe_public_key %}
+                            <!-- Real Stripe -->
+                            <div class="mb-3 p-2 bg-light border-left border-primary">
+                                <small class="text-muted">
+                                    <i class="fas fa-shield-alt text-primary"></i> 
+                                    Sichere Zahlung über Stripe
+                                </small>
+                            </div>
+                            
+                            <div class="mb-3" id="card-element"></div>
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                            
+                            <div class="mb-3">
+                                <small class="text-muted">
+                                    <i class="fab fa-cc-visa text-primary"></i>
+                                    <i class="fab fa-cc-mastercard text-primary ml-2"></i>
+                                    <i class="fab fa-cc-amex text-primary ml-2"></i>
+                                    + andere Karten
+                                </small>
+                            </div>
+                        {% else %}
+                            <!-- Test mode -->
+                            <div class="mb-3 p-3 bg-info border-left border-info">
+                                <small class="text-dark">
+                                    <i class="fas fa-info-circle text-info"></i> 
+                                    Test-Modus: Keine echte Zahlung erforderlich
+                                </small>
+                            </div>
+                        {% endif %}
+                        
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
 
@@ -145,8 +173,17 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    {{ block_super }}
+    {% if stripe_public_key %}
+        {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+        {{ client_secret|json_script:"id_client_secret" }}
+        <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    {% else %}
+        <script>
+            // Simple form for dev mode
+            document.getElementById('payment-form').addEventListener('submit', function(e) {
+                console.log('Dev mode - form submitted');
+            });
+        </script>
+    {% endif %}
 {% endblock %}

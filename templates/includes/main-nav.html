@@ -6,70 +6,39 @@
             </a>
         </li>
         
-        <!-- All Products -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <!-- All Instruments -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}">
                 All Instruments
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="#strings" class="dropdown-item">String Instruments</a>
-                <a href="#percussion" class="dropdown-item">Percussion</a>
-                <a href="#wind" class="dropdown-item">Wind Instruments</a>
-                <a href="#keyboards" class="dropdown-item">Keyboards</a>
-                <a href="{% url 'products' %}" class="dropdown-item">View All</a>
-            </div>
         </li>
 
-        <!-- Rent an Instrument -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="rental-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Rent an Instrument
+        <!-- Rent -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?rental=true">
+                Rent
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="rental-link">
-                <a href="#rental-plans" class="dropdown-item">Subscription Plans</a>
-                <a href="{% url 'products' %}?rental=true" class="dropdown-item">Available for Rent</a>
-                <a href="#" class="dropdown-item">How It Works</a>
-                <a href="#" class="dropdown-item">Rental FAQ</a>
-            </div>
         </li>
 
-        <!-- Music Classes -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="classes-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Music Classes
+        <!-- Classes -->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#">
+                Classes
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="classes-link">
-                <a href="#" class="dropdown-item">Private Lessons</a>
-                <a href="#" class="dropdown-item">Group Classes</a>
-                <a href="#" class="dropdown-item">Online Courses</a>
-                <a href="#" class="dropdown-item">Book a Lesson</a>
-            </div>
         </li>
 
         <!-- Accessories -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="accessories-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#accessories">
                 Accessories
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
-                <a href="#accessories" class="dropdown-item">All Accessories</a>
-                <a href="{% url 'products' %}?category=strings&subcategory=accessories" class="dropdown-item">Guitar & Bass</a>
-                <a href="{% url 'products' %}?category=percussion&subcategory=accessories" class="dropdown-item">Drums & Percussion</a>
-                <a href="{% url 'products' %}?category=wind&subcategory=accessories" class="dropdown-item">Wind Accessories</a>
-            </div>
         </li>
 
         <!-- Special Offers -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#">
                 Special Offers
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
-                <a href="#" class="dropdown-item">Student Discounts</a>
-            </div>
         </li>
     </ul>
 </div>

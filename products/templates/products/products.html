@@ -52,41 +52,90 @@
                 </div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="card h-100 border-0 shadow-sm product-card">
+                                <!-- Product Image Container -->
+                                <div class="product-image-container position-relative">
+                                    {% if product.image %}
+                                        <img class="card-img-top img-fluid product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    {% elif product.image_url %}
+                                        <img class="card-img-top img-fluid product-image" src="{{ product.image_url }}" alt="{{ product.name }}">
+                                    {% else %}
+                                        <img class="card-img-top img-fluid product-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    {% endif %}
+                                    
+                                    <!-- Category Badge -->
+                                    {% if product.category %}
+                                        <div class="category-badge position-absolute top-0 start-0 m-2">
+                                            <span class="badge bg-primary">{{ product.category.friendly_name }}</span>
+                                        </div>
+                                    {% endif %}
+                                    
+                                    <!-- Quick Actions Overlay -->
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-light btn-sm mb-2 w-100">
+                                                <i class="fas fa-eye mr-1"></i> View Details
+                                            </a>
+                                            <form class="form d-inline w-100" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                <button type="submit" class="btn btn-primary btn-sm w-100">
+                                                    <i class="fas fa-shopping-cart mr-1"></i> Add to Cart
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                
+                                <div class="card-body pb-0">
+                                    <h6 class="card-title mb-1">{{ product.name }}</h6>
+                                    {% if product.brand %}
+                                        <p class="text-muted small mb-1"><strong>{{ product.brand }}</strong></p>
+                                    {% endif %}
+                                    {% if product.model %}
+                                        <p class="text-muted small mb-2">{{ product.model }}</p>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="card-footer bg-white pt-0 border-0">
                                     <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                            {% if product.category %}
-                                            <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                                </a>
-                                            </p>
+                                        <div class="col-12">
+                                            <!-- Purchase Price -->
+                                            {% if product.purchase_price %}
+                                                <p class="lead mb-1 text-success font-weight-bold">${{ product.purchase_price }}</p>
+                                                <small class="text-muted">Purchase Price</small>
                                             {% endif %}
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                            
+                                            <!-- Rental Options -->
+                                            {% if product.rental_price_6months %}
+                                                <div class="rental-info mt-2">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-calendar-alt mr-1"></i>
+                                                        From ${{ product.rental_price_6months }}/month
+                                                    </small>
+                                                </div>
                                             {% endif %}
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
+                                            
+                                            <!-- Student Discount -->
+                                            {% if product.student_discount_percentage %}
+                                                <div class="student-discount mt-1">
+                                                    <small class="text-warning">
+                                                        <i class="fas fa-graduation-cap mr-1"></i>
+                                                        {{ product.student_discount_percentage }}% Student Discount
+                                                    </small>
+                                                </div>
+                                            {% endif %}
+                                            
+                                            <!-- Insurance Info -->
+                                            {% if product.basic_insurance_monthly or product.premium_insurance_monthly %}
+                                                <div class="insurance-info mt-1">
+                                                    <small class="text-info">
+                                                        <i class="fas fa-shield-alt mr-1"></i>
+                                                        Insurance Available
+                                                    </small>
+                                                </div>
                                             {% endif %}
                                         </div>
                                     </div>

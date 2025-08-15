@@ -41,7 +41,20 @@
   {% block extra_js %}
   {% endblock %}
 
-  <title>Instrumento - Your Instrument, Your Journey {% block extra_title %}{% endblock %}</title>
+    <title>Instrumento - Your Instrument, Your Journey {% block extra_title %}{% endblock %}</title>
+  
+  <!-- Google Translate Scripts - Only in URL bar -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,de,es,fr,it,pt',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <body>
@@ -67,6 +80,7 @@
             </div>
           </div>
         </form>
+
       </div>
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
@@ -105,6 +119,7 @@
               </div>
             </a>
           </li>
+
         </ul>
       </div>
     </div>
@@ -123,7 +138,11 @@
         <h4 class="logo-font my-1">Free delivery on all instrument rentals! 🎵</h4>
       </div>
     </div>
-  </header>
+    </header>
+
+
+  
+
 
   {% if messages %}
   <div class="message-container">
@@ -148,6 +167,73 @@
 
   {% block content %}
   {% endblock %}
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <!-- About -->
+        <div class="col-md-3 mb-4">
+          <h5 class="mb-3">About</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light">Where to Buy</a></li>
+            <li><a href="#" class="text-light">Artists</a></li>
+            <li><a href="#" class="text-light">About Us</a></li>
+            <li><a href="#" class="text-light">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Instruments -->
+        <div class="col-md-3 mb-4">
+          <h5 class="mb-3">Instruments</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'products' %}" class="text-light">All Instruments</a></li>
+            <li><a href="{% url 'products' %}?category=strings" class="text-light">String Instruments</a></li>
+            <li><a href="{% url 'products' %}?category=percussion" class="text-light">Percussion</a></li>
+            <li><a href="{% url 'products' %}?category=wind" class="text-light">Wind Instruments</a></li>
+            <li><a href="{% url 'products' %}?category=keyboards" class="text-light">Keyboards</a></li>
+          </ul>
+        </div>
+
+        <!-- Rentals -->
+        <div class="col-md-3 mb-4">
+          <h5 class="mb-3">Rentals</h5>
+          <ul class="list-unstyled">
+            <li><a href="#subscription-plans" class="text-light">Subscription Plans</a></li>
+            <li><a href="{% url 'products' %}?rental=true" class="text-light">Available for Rent</a></li>
+            <li><a href="#" class="text-light">How It Works</a></li>
+            <li><a href="#" class="text-light">Rental FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="col-md-3 mb-4">
+          <h5 class="mb-3">Support</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light">Contact</a></li>
+            <li><a href="#" class="text-light">Warranty</a></li>
+            <li><a href="#" class="text-light">Registration</a></li>
+            <li><a href="#" class="text-light">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="bg-light my-4">
+      
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2025 Instrumento. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social-links">
+            <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light me-3"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   {% block postloadjs %}
 

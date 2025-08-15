@@ -162,6 +162,32 @@ a.category-badge > span.badge:hover {
     flex-wrap: wrap;
 }
 
+/* Google Translate Widget Styling */
+#google_translate_element {
+    margin: 10px 0;
+}
+
+#google_translate_element .goog-te-gadget {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+
+#google_translate_element .goog-te-gadget .goog-te-combo {
+    padding: 8px 12px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+#google_translate_element .goog-te-gadget .goog-te-combo:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
 /* Section Styles */
 .section-title {
     font-size: 2.5rem;
@@ -1167,7 +1193,7 @@ input[name='q']::placeholder {
 }
 
 .accessory-image {
-    height: 200px;
+    height: 140px; /* Same height as product images */
     overflow: hidden;
     position: relative;
 }
@@ -1219,7 +1245,7 @@ input[name='q']::placeholder {
 /* Responsive adjustments for accessories */
 @media (max-width: 768px) {
     .accessory-image {
-        height: 150px;
+        height: 120px; /* Smaller for mobile */
     }
     
     .accessory-info {
@@ -1233,4 +1259,89 @@ input[name='q']::placeholder {
     .accessory-price {
         font-size: 20px;
     }
+}
+
+/* Product Cards Styling */
+.product-card {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 280px; /* Limit maximum width */
+    margin: 0 auto;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Compact card styling */
+.product-card .card-body {
+    padding: 0.75rem; /* Smaller padding for more compact cards */
+}
+
+.product-card .card-footer {
+    padding: 0.5rem 0.75rem; /* Smaller footer padding */
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 140px !important; /* Force height with !important */
+}
+
+.product-image-container img,
+.product-image-container .product-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.category-badge {
+    z-index: 10;
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay-content .btn {
+    margin: 5px 0;
+    border-radius: 8px;
+}
+
+.student-discount {
+    background: rgba(255, 193, 7, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.rental-info {
+    background: rgba(13, 110, 253, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
 }

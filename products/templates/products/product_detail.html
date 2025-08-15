@@ -180,10 +180,16 @@
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
                             
-                            <button type="button" class="btn btn-primary rounded-0 text-uppercase w-100 mb-2" id="add-to-cart-btn">
-                                <i class="fas fa-shopping-cart mr-2"></i>
-                                Add to Cart
-                            </button>
+                            <!-- Add to Cart Form -->
+                            <form class="form d-inline" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="quantity" value="1">
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                <button type="submit" class="btn btn-primary rounded-0 text-uppercase w-100 mb-2">
+                                    <i class="fas fa-shopping-cart mr-2"></i>
+                                    Add to Cart
+                                </button>
+                            </form>
                             
                             <button type="button" class="btn btn-success rounded-0 text-uppercase w-100" id="rent-now-btn">
                                 <i class="fas fa-play mr-2"></i>
@@ -253,12 +259,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize prices
     updatePrices();
-    
-    // Add to cart functionality
-    document.getElementById('add-to-cart-btn').addEventListener('click', function() {
-        // TODO: Implement add to cart logic
-        alert('Add to cart functionality coming soon!');
-    });
     
     // Rent now functionality
     document.getElementById('rent-now-btn').addEventListener('click', function() {

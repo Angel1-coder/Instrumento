@@ -65,3 +65,24 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+/* Human touch - subtle shake animation for card errors */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Custom styling for payment security info */
+.border-left.border-primary {
+    border-left: 4px solid #007bff !important;
+}
+
+/* Payment method icons styling */
+.fab {
+    font-size: 1.2em;
+}

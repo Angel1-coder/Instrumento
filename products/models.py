@@ -79,6 +79,11 @@ class Product(models.Model):
     # Purchase price
     purchase_price = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     
+    @property
+    def price(self):
+        """Alias for purchase_price to maintain compatibility with existing templates"""
+        return self.purchase_price
+    
     # Student discount
     student_discount_percentage = models.IntegerField(default=10, help_text="Student discount in percentage")
     
@@ -89,6 +94,16 @@ class Product(models.Model):
     # Image fields
     image = models.ImageField(upload_to='', null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
+    
+    # Default image fallback
+    def get_display_image(self):
+        """Get the best available image for display"""
+        if self.image:
+            return self.image
+        elif self.image_url:
+            return self.image_url
+        else:
+            return 'noimage.png'
 
     class Meta:
         ordering = ['name']

@@ -39,8 +39,15 @@ card.addEventListener('change', function (event) {
             <span>${event.error.message}</span>
         `;
         $(errorDiv).html(html);
+        // Add subtle shake animation for human feel
+        $('#card-element').addClass('shake');
+        setTimeout(function() {
+            $('#card-element').removeClass('shake');
+        }, 500);
     } else {
         errorDiv.textContent = '';
+        // Clear any previous error styling
+        $('#card-element').removeClass('shake');
     }
 });
 
