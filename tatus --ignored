@@ -1,0 +1,20 @@
+warning: in the working copy of 'example_env.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/includes/main-nav.html', LF will be replaced by CRLF the next time Git touches it
+ boutique_ado/settings.py                           |  24 [32m+[m[31m-[m
+ checkout/static/checkout/css/checkout.css          |  21 [32m+[m
+ checkout/static/checkout/js/stripe_elements.js     |   7 [32m+[m
+ checkout/templates/checkout/checkout.html          |  55 [32m++[m[31m-[m
+ checkout/views.py                                  |  70 [32m++[m[31m-[m
+ example_env.py                                     |  21 [32m+[m[31m-[m
+ home/templates/home/index.html                     |  13 [32m+[m[31m-[m
+ home/views.py                                      |   1 [31m-[m
+ locale/de/LC_MESSAGES/django.po                    | 495 [32m+++++++++++++++++++++[m
+ locale/es/LC_MESSAGES/django.po                    | 495 [32m+++++++++++++++++++++[m
+ .../management/commands/populate_rental_prices.py  |   3 [32m+[m
+ products/models.py                                 |  15 [32m+[m
+ products/templates/products/product_detail.html    |  20 [32m+[m[31m-[m
+ products/templates/products/products.html          | 109 [32m+++[m[31m--[m
+ static/css/base.css                                | 115 [32m++++[m[31m-[m
+ templates/base.html                                |  90 [32m+++[m[31m-[m
+ templates/includes/main-nav.html                   |  60 [32m+[m[31m--[m
+ 17 files changed, 1481 insertions(+), 133 deletions(-)

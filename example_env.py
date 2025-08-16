@@ -1,10 +1,21 @@
 """
-This is an example file of the environment variables you should
-have set in the env.py file of your project to run it locally.
+Example environment variables for local development.
+Copy this file to env.py and fill in your actual values.
 """
 import os
 
-os.environ.setdefault('STRIPE_PUBLIC_KEY', 'your stripe publishable key, get this from your stripe developers dashboard')
-os.environ.setdefault('STRIPE_SECRET_KEY', 'your stripe secret key, get this from your stripe developers dashboard')
-os.environ.setdefault('STRIPE_WH_SECRET', 'your stripe webhook secret, get this from the Stripe CLI after opening the stripe portal')
+# Stripe Keys (placeholder values - replace with your actual keys)
+os.environ.setdefault('STRIPE_PUBLIC_KEY', 'pk_test_your_stripe_public_key_here')
+os.environ.setdefault('STRIPE_SECRET_KEY', 'sk_test_your_stripe_secret_key_here')
+os.environ.setdefault('STRIPE_WH_SECRET', 'whsec_your_stripe_webhook_secret_here')
+
+# Development mode
 os.environ.setdefault('DEVELOPMENT', '1')
+
+# Database (SQLite for development)
+os.environ.setdefault('DATABASE_URL', '')
+
+# Email (console backend for development)
+os.environ.setdefault('EMAIL_HOST_USER', '')
+os.environ.setdefault('EMAIL_HOST_PASS', '')
+os.environ.setdefault('DEFAULT_FROM_EMAIL', 'noreply@instrumento.com')

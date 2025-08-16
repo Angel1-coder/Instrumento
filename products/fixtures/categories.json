@@ -1,11 +1,9 @@
 [
-    { "pk": 1, "model": "products.category", "fields": { "name": "activewear", "friendly_name": "Activewear" } },
-    { "pk": 2, "model": "products.category", "fields": { "name": "bed_bath", "friendly_name": "Bed & Bath" } },
-    { "pk": 3, "model": "products.category", "fields": { "name": "clearance", "friendly_name": "Clearance" } },
-    { "pk": 4, "model": "products.category", "fields": { "name": "deals", "friendly_name": "Deals" } },
-    { "pk": 5, "model": "products.category", "fields": { "name": "essentials", "friendly_name": "Essentials" } },
-    { "pk": 6, "model": "products.category", "fields": { "name": "jeans", "friendly_name": "Jeans" } },
-    { "pk": 7, "model": "products.category", "fields": { "name": "kitchen_dining", "friendly_name": "Kitchen & Dining" } },
-    { "pk": 8, "model": "products.category", "fields": { "name": "new_arrivals", "friendly_name": "New Arrivals" } },
-    { "pk": 9, "model": "products.category", "fields": { "name": "shirts", "friendly_name": "Shirts" } }
+    { "pk": 1, "model": "products.category", "fields": { "name": "string_instruments", "friendly_name": "String Instruments" } },
+    { "pk": 2, "model": "products.category", "fields": { "name": "wind_instruments", "friendly_name": "Wind Instruments" } },
+    { "pk": 3, "model": "products.category", "fields": { "name": "percussion", "friendly_name": "Percussion" } },
+    { "pk": 4, "model": "products.category", "fields": { "name": "keyboards", "friendly_name": "Keyboards" } },
+    { "pk": 5, "model": "products.category", "fields": { "name": "accessories", "friendly_name": "Accessories" } },
+    { "pk": 6, "model": "products.category", "fields": { "name": "rental", "friendly_name": "Rental Instruments" } },
+    { "pk": 7, "model": "products.category", "fields": { "name": "maintenance", "friendly_name": "Maintenance & Repair" } }
 ]

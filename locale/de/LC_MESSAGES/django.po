@@ -1,0 +1,495 @@
+# German translations for Django.
+# Copyright (C) 2025 Django Software Foundation
+# This file is distributed under the same license as the Django package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-14 16:44+0000\n"
+"PO-Revision-Date: 2025-08-14 16:44+0000\n"
+"Last-Translator: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: home/templates/home/index.html:25
+msgid "Your Instrument, Your Journey"
+msgstr "Dein Instrument, Deine Reise"
+
+#: home/templates/home/index.html:28
+msgid "Discover the perfect instrument for your musical adventure"
+msgstr "Entdecke das perfekte Instrument für dein musikalisches Abenteuer"
+
+#: home/templates/home/index.html:31
+msgid "Explore Instruments"
+msgstr "Instrumente erkunden"
+
+#: home/templates/home/index.html:33
+msgid "View Plans"
+msgstr "Pläne anzeigen"
+
+#: home/templates/home/index.html:42
+msgid "Explore Our Instrument Collection"
+msgstr "Entdecke unsere Instrumentensammlung"
+
+#: home/templates/home/index.html:43
+msgid "Professional instruments for every skill level and budget"
+msgstr "Professionelle Instrumente für jedes Können und jeden Geldbeutel"
+
+#: home/templates/home/index.html:50
+msgid "Electric Guitar"
+msgstr "E-Gitarre"
+
+#: home/templates/home/index.html:53
+msgid "Acoustic Guitar"
+msgstr "Akustikgitarre"
+
+#: home/templates/home/index.html:56
+msgid "Electric Bass"
+msgstr "E-Bass"
+
+#: home/templates/home/index.html:65
+msgid "Classic electric guitar sound"
+msgstr "Klassischer E-Gitarren-Sound"
+
+#: home/templates/home/index.html:67
+msgid "View Details"
+msgstr "Details anzeigen"
+
+#: home/templates/home/index.html:68
+msgid "Rent Now"
+msgstr "Jetzt mieten"
+
+#: home/templates/home/index.html:75
+msgid "Twangy country tone"
+msgstr "Twangiger Country-Ton"
+
+#: home/templates/home/index.html:85
+msgid "Rich, warm tone"
+msgstr "Reicher, warmer Ton"
+
+#: home/templates/home/index.html:95
+msgid "Fast playing neck"
+msgstr "Schneller Spielhals"
+
+#: home/templates/home/index.html:105
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:115
+msgid "Classic dreadnought"
+msgstr "Klassische Dreadnought"
+
+#: home/templates/home/index.html:125
+msgid "Electro-acoustic"
+msgstr "Elektro-Akustik"
+
+#: home/templates/home/index.html:135
+msgid "Traditional sound"
+msgstr "Traditioneller Sound"
+
+#: home/templates/home/index.html:145
+msgid "Classic bass tone"
+msgstr "Klassischer Bass-Ton"
+
+#: home/templates/home/index.html:155
+msgid "Smooth jazz tone"
+msgstr "Sanfter Jazz-Ton"
+
+#: home/templates/home/index.html:165
+msgid "Versatile bass"
+msgstr "Vielseitiger Bass"
+
+#: home/templates/home/index.html:175
+msgid "Modern bass design"
+msgstr "Modernes Bass-Design"
+
+#: home/templates/home/index.html:185
+msgid "Drum Kits"
+msgstr "Schlagzeuge"
+
+#: home/templates/home/index.html:188
+msgid "Cajón"
+msgstr "Cajón"
+
+#: home/templates/home/index.html:191
+msgid "Handpan"
+msgstr "Handpan"
+
+#: home/templates/home/index.html:194
+msgid "Congas/Bongos"
+msgstr "Congas/Bongos"
+
+#: home/templates/home/index.html:203
+msgid "Powerful rock sound"
+msgstr "Kraftvoller Rock-Sound"
+
+#: home/templates/home/index.html:213
+msgid "Smooth jazz performance"
+msgstr "Sanfte Jazz-Performance"
+
+#: home/templates/home/index.html:223
+msgid "Recording quality"
+msgstr "Aufnahmequalität"
+
+#: home/templates/home/index.html:233
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:243
+msgid "Studio quality cajón"
+msgstr "Studio-Qualität Cajón"
+
+#: home/templates/home/index.html:253
+msgid "Authentic Spanish sound"
+msgstr "Authentischer spanischer Sound"
+
+#: home/templates/home/index.html:263
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:273
+msgid "Versatile fusion style"
+msgstr "Vielseitiger Fusion-Stil"
+
+#: home/templates/home/index.html:283
+msgid "Meditation instrument"
+msgstr "Meditationsinstrument"
+
+#: home/templates/home/index.html:293
+msgid "High-quality handpan"
+msgstr "Hochwertige Handpan"
+
+#: home/templates/home/index.html:303
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:313
+msgid "Zen meditation sound"
+msgstr "Zen-Meditations-Sound"
+
+#: home/templates/home/index.html:323
+msgid "Studio quality congas"
+msgstr "Studio-Qualität Congas"
+
+#: home/templates/home/index.html:333
+msgid "Authentic Latin sound"
+msgstr "Authentischer Latin-Sound"
+
+#: home/templates/home/index.html:343
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:353
+msgid "Versatile fusion style"
+msgstr "Vielseitiger Fusion-Stil"
+
+#: home/templates/home/index.html:363
+msgid "Trumpet"
+msgstr "Trompete"
+
+#: home/templates/home/index.html:366
+msgid "Saxophone"
+msgstr "Saxophon"
+
+#: home/templates/home/index.html:369
+msgid "Flute"
+msgstr "Flöte"
+
+#: home/templates/home/index.html:378
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:388
+msgid "Smooth jazz sound"
+msgstr "Sanfter Jazz-Sound"
+
+#: home/templates/home/index.html:398
+msgid "Orchestral quality"
+msgstr "Orchester-Qualität"
+
+#: home/templates/home/index.html:408
+msgid "Concert hall quality"
+msgstr "Konzertsaal-Qualität"
+
+#: home/templates/home/index.html:418
+msgid "Classic jazz sound"
+msgstr "Klassischer Jazz-Sound"
+
+#: home/templates/home/index.html:428
+msgid "Rich tenor tone"
+msgstr "Reicher Tenor-Ton"
+
+#: home/templates/home/index.html:438
+msgid "Smooth jazz performance"
+msgstr "Sanfte Jazz-Performance"
+
+#: home/templates/home/index.html:448
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:458
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:468
+msgid "Orchestral quality"
+msgstr "Orchester-Qualität"
+
+#: home/templates/home/index.html:478
+msgid "Concert hall quality"
+msgstr "Konzertsaal-Qualität"
+
+#: home/templates/home/index.html:488
+msgid "Traditional Celtic sound"
+msgstr "Traditioneller keltischer Sound"
+
+#: home/templates/home/index.html:498
+msgid "Digital Piano"
+msgstr "Digital Piano"
+
+#: home/templates/home/index.html:501
+msgid "MIDI Keyboard"
+msgstr "MIDI-Keyboard"
+
+#: home/templates/home/index.html:508
+msgid "Entry level digital piano"
+msgstr "Einstiegs-Digitalpiano"
+
+#: home/templates/home/index.html:518
+msgid "Compact design"
+msgstr "Kompaktes Design"
+
+#: home/templates/home/index.html:528
+msgid "MIDI keyboard"
+msgstr "MIDI-Keyboard"
+
+#: home/templates/home/index.html:538
+msgid "Studio MIDI keyboard"
+msgstr "Studio MIDI-Keyboard"
+
+#: home/templates/home/index.html:548
+msgid "49-key MIDI keyboard"
+msgstr "49-Tasten MIDI-Keyboard"
+
+#: home/templates/home/index.html:558
+msgid "Studio MIDI keyboard"
+msgstr "Studio MIDI-Keyboard"
+
+#: home/templates/home/index.html:568
+msgid "High-quality MIDI controller"
+msgstr "Hochwertiger MIDI-Controller"
+
+#: home/templates/home/index.html:578
+msgid "Perfect for beginners"
+msgstr "Perfekt für Anfänger"
+
+#: home/templates/home/index.html:588
+msgid "Professional Accessories"
+msgstr "Professionelle Zubehörteile"
+
+#: home/templates/home/index.html:589
+msgid "Complete your musical setup"
+msgstr "Vervollständige dein musikalisches Setup"
+
+#: home/templates/home/index.html:595
+msgid "Professional protection for your instruments"
+msgstr "Professioneller Schutz für deine Instrumente"
+
+#: home/templates/home/index.html:605
+msgid "Studio quality recording equipment"
+msgstr "Studio-Qualität Aufnahmeausrüstung"
+
+#: home/templates/home/index.html:615
+msgid "Professional monitoring headphones"
+msgstr "Professionelle Monitor-Kopfhörer"
+
+#: home/templates/home/index.html:625
+msgid "Comfortable and durable straps"
+msgstr "Bequeme und langlebige Gurte"
+
+#: home/templates/home/index.html:635
+msgid "Flexible Rental Plans"
+msgstr "Flexible Mietpläne"
+
+#: home/templates/home/index.html:636
+msgid "Choose the plan that fits your musical journey"
+msgstr "Wähle den Plan, der zu deiner musikalischen Reise passt"
+
+#: home/templates/home/index.html:644
+msgid "3 Months"
+msgstr "3 Monate"
+
+#: home/templates/home/index.html:645
+msgid "Try & Test"
+msgstr "Testen & Probieren"
+
+#: home/templates/home/index.html:650
+msgid "Perfect for testing instruments"
+msgstr "Perfekt zum Testen von Instrumenten"
+
+#: home/templates/home/index.html:651
+msgid "Monthly cancellation possible"
+msgstr "Monatliche Kündigung möglich"
+
+#: home/templates/home/index.html:652
+msgid "Basic insurance included"
+msgstr "Grundversicherung inklusive"
+
+#: home/templates/home/index.html:653
+msgid "No long-term commitment"
+msgstr "Keine langfristige Verpflichtung"
+
+#: home/templates/home/index.html:654
+msgid "Get Started"
+msgstr "Loslegen"
+
+#: home/templates/home/index.html:660
+msgid "Most Popular"
+msgstr "Am beliebtesten"
+
+#: home/templates/home/index.html:661
+msgid "6 Months"
+msgstr "6 Monate"
+
+#: home/templates/home/index.html:662
+msgid "Best Value"
+msgstr "Bester Wert"
+
+#: home/templates/home/index.html:667
+msgid "22% savings vs monthly"
+msgstr "22% Ersparnis gegenüber monatlich"
+
+#: home/templates/home/index.html:668
+msgid "2 months free lessons"
+msgstr "2 Monate kostenlose Unterrichtsstunden"
+
+#: home/templates/home/index.html:669
+msgid "Premium insurance included"
+msgstr "Premium-Versicherung inklusive"
+
+#: home/templates/home/index.html:670
+msgid "Free case included"
+msgstr "Kostenlose Tasche inklusive"
+
+#: home/templates/home/index.html:671
+msgid "Purchase option at end"
+msgstr "Kaufoption am Ende"
+
+#: home/templates/home/index.html:680
+msgid "12 Months"
+msgstr "12 Monate"
+
+#: home/templates/home/index.html:681
+msgid "Serious Musician"
+msgstr "Ernsthafter Musiker"
+
+#: home/templates/home/index.html:686
+msgid "34% savings vs monthly"
+msgstr "34% Ersparnis gegenüber monatlich"
+
+#: home/templates/home/index.html:687
+msgid "4 months free lessons"
+msgstr "4 Monate kostenlose Unterrichtsstunden"
+
+#: home/templates/home/index.html:688
+msgid "Premium insurance included"
+msgstr "Premium-Versicherung inklusive"
+
+#: home/templates/home/index.html:689
+msgid "Free case & accessories"
+msgstr "Kostenlose Tasche & Zubehör"
+
+#: home/templates/home/index.html:690
+msgid "Purchase option at end"
+msgstr "Kaufoption am Ende"
+
+#: home/templates/home/index.html:691
+msgid "Priority support"
+msgstr "Prioritäts-Support"
+
+#: home/templates/home/index.html:697
+msgid "24 Months"
+msgstr "24 Monate"
+
+#: home/templates/home/index.html:698
+msgid "Long-term"
+msgstr "Langfristig"
+
+#: home/templates/home/index.html:703
+msgid "45% savings vs monthly"
+msgstr "45% Ersparnis gegenüber monatlich"
+
+#: home/templates/home/index.html:704
+msgid "6 months free lessons"
+msgstr "6 Monate kostenlose Unterrichtsstunden"
+
+#: home/templates/home/index.html:705
+msgid "Premium insurance included"
+msgstr "Premium-Versicherung inklusive"
+
+#: home/templates/home/index.html:706
+msgid "Free case & accessories"
+msgstr "Kostenlose Tasche & Zubehör"
+
+#: home/templates/home/index.html:707
+msgid "Purchase option at end"
+msgstr "Kaufoption am Ende"
+
+#: home/templates/home/index.html:708
+msgid "Priority support"
+msgstr "Prioritäts-Support"
+
+#: home/templates/home/index.html:714
+msgid "Free delivery on all instrument rentals! 🎵"
+msgstr "Kostenloser Versand für alle Instrumentenmieten! 🎵"
+
+#: home/templates/home/index.html:47
+msgid "My Account"
+msgstr "Mein Konto"
+
+#: home/templates/home/index.html:52
+msgid "Product Management"
+msgstr "Produktverwaltung"
+
+#: home/templates/home/index.html:54
+msgid "My Profile"
+msgstr "Mein Profil"
+
+#: home/templates/home/index.html:55
+msgid "Logout"
+msgstr "Abmelden"
+
+#: home/templates/home/index.html:57
+msgid "Register"
+msgstr "Registrieren"
+
+#: home/templates/home/index.html:58
+msgid "Login"
+msgstr "Anmelden"
+
+#: home/templates/home/index.html:62
+msgid "Search instruments..."
+msgstr "Instrumente suchen..."
+
+#: home/templates/home/index.html:65
+msgid "Search"
+msgstr "Suchen"
+
+#: home/templates/home/index.html:67
+msgid "Language"
+msgstr "Sprache"
+
+#: home/templates/home/index.html:68
+msgid "English"
+msgstr "Englisch"
+
+#: home/templates/home/index.html:69
+msgid "German"
+msgstr "Deutsch"
+
+#: home/templates/home/index.html:70
+msgid "Spanish"
+msgstr "Spanisch"
